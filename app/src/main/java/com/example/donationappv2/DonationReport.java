@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class DonationReport extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +16,7 @@ public class DonationReport extends AppCompatActivity {
         Donations obj = getIntent().getParcelableExtra("currentDonation");
         TextView reportText = (TextView) findViewById(R.id.report_id);
         reportText.setText(buildStringReport(obj));
+
     }
 
 

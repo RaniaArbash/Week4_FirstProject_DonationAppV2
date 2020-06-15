@@ -17,6 +17,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.zip.Inflater;
+
 public class MainActivity extends AppCompatActivity {
 
     Button donate;
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     int pType = 0;
     int[] sharingArray = {0,0,0};//what'sup,massenger,text
     int sharingIndex = 0;
+    ArrayList<Donations> donationsArrayList = new ArrayList<>(0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     payment = "Credit card";
                     pType = 1;
                 }
+                sharingArray = new int[]{0,0,0};
                 Boolean shared = false;//what'sup,text,massenger
                 if (whatsup_check.isChecked()) {
                     sharing += "What's up";
@@ -78,10 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (!shared)
                     sharing="";
-
                 int a = Integer.parseInt(amount.getText().toString());
                 currentDonation = new Donations(pType,a,sharingArray);
-
+                donationsArrayList.add(currentDonation);
                 builder.setMessage("Thanks for your " +payment + " payment with amount " + a +sharing )
                         .setCancelable(true)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -115,6 +119,12 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.resetUI:{
                setUI();
+            }
+            case R.id.donations_list_id:{
+                Intent allDonationsIntent = new Intent(this,AllDonations.class);
+                allDonationsIntent.putParcelableArrayListExtra("donationList",donationsArrayList);
+                startActivity(allDonationsIntent);
+
             }
         }
 

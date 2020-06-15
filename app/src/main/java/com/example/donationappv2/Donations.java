@@ -9,6 +9,7 @@ public class Donations implements Parcelable {
     double amount;
     int[] sharingApps;
 
+
     public Donations(int paymentMethod, double amount, int[] sharingApps) {
         this.paymentMethod = paymentMethod;
         this.amount = amount;
