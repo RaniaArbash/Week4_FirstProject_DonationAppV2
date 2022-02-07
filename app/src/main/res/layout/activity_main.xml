@@ -13,14 +13,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.40" />
+        app:layout_constraintGuide_percent="0.3912037" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/payment_guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="169dp" />
+        app:layout_constraintGuide_percent="0.1997636" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/checkboxes_guideline"
@@ -123,7 +123,7 @@
         app:layout_constraintBottom_toTopOf="@+id/messenger_check"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="@+id/checkboxes_guideline"
         app:layout_constraintTop_toBottomOf="@id/wup_check"
         app:layout_constraintVertical_chainStyle="packed">
@@ -138,10 +138,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/amount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/howToShareID"
-        app:layout_constraintVertical_bias="0.831">
+        app:layout_constraintVertical_bias="0.841">
 
     </TextView>
 

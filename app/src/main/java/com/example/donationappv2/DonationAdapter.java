@@ -15,6 +15,7 @@ public class DonationAdapter extends BaseAdapter {
     ArrayList<Donations> donationsArrayList;
     LayoutInflater inflater;
     View view;
+
     public DonationAdapter(Context appContext, ArrayList<Donations> list){
         this.context = appContext;
         this.donationsArrayList = list;
@@ -48,7 +49,6 @@ public class DonationAdapter extends BaseAdapter {
             paymentText.setText("Credit Card");
         else
             paymentText.setText("PayPal");
-
 
         String sharing = "";
         if (donationsArrayList.get(position).sharingApps[0] == 1){

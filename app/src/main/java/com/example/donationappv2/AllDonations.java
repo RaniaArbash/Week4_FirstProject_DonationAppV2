@@ -18,6 +18,8 @@ public class AllDonations extends AppCompatActivity {
 
         donationList =  getIntent().getParcelableArrayListExtra("donationList");
         myList = (ListView) findViewById(R.id.alldonationlist);
+
+
         DonationAdapter adapter = new DonationAdapter(getApplicationContext(),donationList);
         myList.setAdapter(adapter);
 

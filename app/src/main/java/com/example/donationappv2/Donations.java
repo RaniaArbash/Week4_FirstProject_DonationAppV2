@@ -7,8 +7,7 @@ public class Donations implements Parcelable {
 
     int paymentMethod; // 1 for credit and 2 for paypal
     double amount;
-    int[] sharingApps;
-
+    int[] sharingApps;// don't include this field in Room DB
 
     public Donations(int paymentMethod, double amount, int[] sharingApps) {
         this.paymentMethod = paymentMethod;
@@ -19,7 +18,7 @@ public class Donations implements Parcelable {
     protected Donations(Parcel in) {
         paymentMethod = in.readInt();
         amount = in.readDouble();
-        sharingApps = in.createIntArray();
+       sharingApps = in.createIntArray();
     }
 
     public static final Creator<Donations> CREATOR = new Creator<Donations>() {

@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         messages_check = (CheckBox)findViewById(R.id.messages_check);
         amount = (EditText) findViewById(R.id.amount);
 
-
-
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,12 +82,17 @@ public class MainActivity extends AppCompatActivity {
                 if (!shared)
                     sharing="";
                 int a = Integer.parseInt(amount.getText().toString());
+
                 currentDonation = new Donations(pType,a,sharingArray);
+
                 donationsArrayList.add(currentDonation);
                 builder.setMessage("Thanks for your " +payment + " payment with amount " + a +sharing )
                         .setCancelable(true)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+//                                Intent i = new Intent(getApplicationContext(),DonationReport.class);
+//                                i.putExtra("currentDonation",currentDonation);
+//                                startActivity(i);
                                     setUI();
                             }
                         });
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent allDonationsIntent = new Intent(this,AllDonations.class);
                 allDonationsIntent.putParcelableArrayListExtra("donationList",donationsArrayList);
                 startActivity(allDonationsIntent);
+                setUI();
 
             }
         }
